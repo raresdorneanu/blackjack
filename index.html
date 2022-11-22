@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLACKJACK</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="body">
+      <div class="sitbutton animate__animated animate__bounceIn">
+        <img src="images/play.png" alt="PLAY" />
+        <button id="sitButton">PLAY</button>
+      </div>
+
+      <div class="balance-container animate__animated animate__bounceIn">
+        <h2>Please add some money</h2>
+        <p>(Minimum:10 Maximum: 1000)</p>
+        <input type="text" name="balance" id="balanceValue" value="" />
+        <button
+          id="addMoney"
+          onclick="sit(document.getElementById('balanceValue').value)"
+        >
+          ADD MONEY
+        </button>
+      </div>
+      <p id="showtext"></p>
+      <p id="showbettext"></p>
+      <div class="bet-container animate__animated animate__bounceIn">
+        <h2>Place your bet</h2>
+        <div class="bet_button_container">
+          <!-- <div class="button_wrap">
+            <button id="bet0" onclick="deal(1)">1</button>
+          </div>
+          <div class="button_wrap">
+            <button id="bet1" onclick="deal(5)">5</button>
+          </div>
+          <div class="button_wrap">
+            <button id="bet2" onclick="deal(10)">10</button>
+          </div>
+          <div class="button_wrap">
+            <button id="bet3" onclick="deal(50)">50</button>
+          </div>
+          <div class="button_wrap">
+            <button id="bet4" onclick="deal(100)">100</button>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="cards-container animate__animated animate__bounceIn">
+        <div class="your_balance"></div>
+        <h2 class="dealer_title">
+          Dealer cards: <span class="dealer_number"></span>
+        </h2>
+        <div class="dealer-cards"></div>
+        <h2 class="player_title">
+          Your cards: <span class="your_number"></span>
+        </h2>
+        <div class="your-cards"></div>
+        <div class="move-container">
+          <div class="turnButtons">
+            <button id="hit" onclick="turn('hit')">HIT</button>
+            <button id="stay" onclick="turn('stay')">STAY</button>
+            <button id="double" onclick="turn('double')">DOUBLE</button>
+          </div>
+        </div>
+        <div class="you_win hide"><h2>You WIN!</h2></div>
+        <div class="you_lost hide">You LOST</div>
+      </div>
+
+      <div class="round_end_container animate__animated animate__bounceIn">
+        <div class="round_end_flex_row">
+          <div class="money-container">
+            <p>Win:</p>
+            <span class="dealWinAmount"></span>
+            <p>Balance:</p>
+            <span class="dealCurrentBalance"></span>
+          </div>
+          <div class="round-end">
+            <button id="newBet" onclick="newDeal()">New Deal</button>
+            <button id="stand" onclick="stand()">STAND</button>
+          </div>
+        </div>
+
+        <div class="rounds-number">
+          <p>Rounds played: <span class="rounds-played"></span></p>
+          <button id="playAgain">PLAY AGAIN!</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
