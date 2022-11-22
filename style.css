@@ -460,6 +460,13 @@ button:hover {
     color: #fff;
     margin-top: 20px;
   }
+  .balance-container h2 {
+    font-size: 36px;
+  }
+
+  .balance-container p {
+    font-size: 32px;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
@@ -496,14 +503,6 @@ button:hover {
     box-shadow: inset 0 0px 20px 0 #fff;
     margin: 10px 20px;
     margin-bottom: 0px;
-  }
-
-  .balance-container h2 {
-    font-size: 36px;
-  }
-
-  .balance-container p {
-    font-size: 32px;
   }
 }
 
