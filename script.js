@@ -90,7 +90,7 @@ function deal(number) {
                         newCardDiv.classList.add('card-wrap')
                         newCardDiv.appendChild(newCard)
                         yourCards.appendChild(newCardDiv);
-                        imagePath = String('/cards/' + dealResponse.playerCards[i].rank + '-' + dealResponse.playerCards[i].suite.charAt(0) + '.png');
+                        imagePath = String('cards/' + dealResponse.playerCards[i].rank + '-' + dealResponse.playerCards[i].suite.charAt(0) + '.png');
                         $('.' + cardClass).attr("src", imagePath);
                         console.log('player', imagePath)
                     }, 1500);
@@ -110,7 +110,7 @@ function deal(number) {
                         newCardDiv.classList.add('card-wrap')
                         newCardDiv.appendChild(newCard)
                         dealerCards.appendChild(newCardDiv);
-                        imagePath = String('/cards/' + dealResponse.dealerCards[i].rank + '-' + dealResponse.dealerCards[i].suite.charAt(0) + '.png');
+                        imagePath = String('cards/' + dealResponse.dealerCards[i].rank + '-' + dealResponse.dealerCards[i].suite.charAt(0) + '.png');
                         $('.' + cardClass).attr("src", imagePath);
                         console.log('dealer', imagePath)
                     }, 1000);
@@ -142,6 +142,7 @@ function deal(number) {
 
                     if (dealResponse.winAmount < 0) {
                         $('.dealWinAmount').css('color', 'red');
+                        $('.winner').html('YOU LOST')
                         setTimeout(() => {
                             $('.round_end_container').show();
                             $('.you_lost').removeClass('hide').addClass('animate__animated').addClass('animate__bounceIn');
@@ -151,6 +152,7 @@ function deal(number) {
 
                     } else {
                         $('.dealWinAmount').css('color', 'green');
+                        $('.winner').html('YOU WON')
                         setTimeout(() => {
                             $('.round_end_container').show();
                             $('.you_win').removeClass('hide').addClass('animate__animated').addClass('animate__bounceIn');
@@ -218,7 +220,7 @@ function turn(move) {
                     newCardDiv.classList.add('card-wrap')
                     newCardDiv.appendChild(newCard)
                     yourCards.appendChild(newCardDiv);
-                    imagePath = String('/cards/' + turnHitResponse.playerCard.rank + '-' + turnHitResponse.playerCard.suite.charAt(0) + '.png');
+                    imagePath = String('cards/' + turnHitResponse.playerCard.rank + '-' + turnHitResponse.playerCard.suite.charAt(0) + '.png');
                     $('.my-image-hit' + increment).attr("src", imagePath);
                     console.log('player', imagePath)
                     if (turnHitResponse.roundEnded) {
@@ -240,6 +242,7 @@ function turn(move) {
                             $('.you_lost').removeClass('animate__bounceOut')
                         }
                         if (turnHitResponse.winAmount < 0) {
+                            $('.winner').html('YOU LOST')
                             $('.dealWinAmount').css('color', 'red');
                             setTimeout(() => {
                                 $('.round_end_container').show();
@@ -250,6 +253,7 @@ function turn(move) {
 
                         } else {
                             $('.dealWinAmount').css('color', 'green');
+                            $('.winner').html('YOU WON')
                             setTimeout(() => {
                                 $('.round_end_container').show();
                                 $('.you_win').removeClass('hide').addClass('animate__animated').addClass('animate__bounceIn');
@@ -274,7 +278,7 @@ function turn(move) {
                         newCardDiv.classList.add('card-wrap')
                         newCardDiv.appendChild(newCard)
                         dealerCards.appendChild(newCardDiv);
-                        imagePath = String('/cards/' + turnHitResponse.dealerCards[i].rank + '-' + turnHitResponse.dealerCards[i].suite.charAt(0) + '.png');
+                        imagePath = String('cards/' + turnHitResponse.dealerCards[i].rank + '-' + turnHitResponse.dealerCards[i].suite.charAt(0) + '.png');
                         $('.' + cardClass).attr("src", imagePath);
                         console.log('dealer', imagePath)
                     }
@@ -298,6 +302,7 @@ function turn(move) {
                             $('.you_lost').removeClass('animate__bounceOut')
                         }
                         if (turnHitResponse.winAmount < 0) {
+                            $('.winner').html('YOU LOST')
                             $('.dealWinAmount').css('color', 'red');
                             setTimeout(() => {
                                 $('.round_end_container').show();
@@ -307,6 +312,7 @@ function turn(move) {
                             }, 300);
 
                         } else {
+                            $('.winner').html('YOU WON')
                             $('.dealWinAmount').css('color', 'green');
                             setTimeout(() => {
                                 $('.round_end_container').show();
@@ -330,7 +336,7 @@ function turn(move) {
                     newCardDiv.classList.add('card-wrap')
                     newCardDiv.appendChild(newCard)
                     yourCards.appendChild(newCardDiv);
-                    imagePath = String('/cards/' + turnHitResponse.playerCard.rank + '-' + turnHitResponse.playerCard.suite.charAt(0) + '.png');
+                    imagePath = String('cards/' + turnHitResponse.playerCard.rank + '-' + turnHitResponse.playerCard.suite.charAt(0) + '.png');
                     $('.my-image-double' + increment).attr("src", imagePath);
                     console.log('dealer', imagePath)
                     if (turnHitResponse.roundEnded) {
@@ -352,6 +358,7 @@ function turn(move) {
                             $('.you_lost').removeClass('animate__bounceOut')
                         }
                         if (turnHitResponse.winAmount < 0) {
+                            $('.winner').html('YOU LOST')
                             $('.dealWinAmount').css('color', 'red');
                             setTimeout(() => {
                                 $('.round_end_container').show();
@@ -361,6 +368,7 @@ function turn(move) {
                             }, 300);
 
                         } else {
+                            $('.winner').html('YOU WON')
                             $('.dealWinAmount').css('color', 'green');
                             setTimeout(() => {
                                 $('.round_end_container').show();
