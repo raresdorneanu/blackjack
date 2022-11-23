@@ -52,7 +52,7 @@ function sit(number) {
         error: function (e, exception) {
 
             if (e.status == 400) {
-                alert('"\"balance\" must be less than or equal to 1000"')
+                alert('"\"balance\" must be between 10 and 1000"')
             }
 
 
