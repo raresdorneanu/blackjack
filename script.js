@@ -414,8 +414,12 @@ function stand() {
             standResponse = res;
             if (standResponse.winAmount < 0) {
                 $('.dealWinAmount').html('Your total loss: ' + standResponse.winAmount)
+                $('.winner').css('visibility', 'hidden')
+                $('.dealWinAmount').css('color', 'red');
             } else {
                 $('.dealWinAmount').html('Your total win: ' + standResponse.winAmount)
+                $('.winner').css('visibility', 'hidden')
+                $('.dealWinAmount').css('color', 'green');
             }
 
             $('.rounds-played').html(standResponse.roundsPlayed)
